@@ -2,7 +2,7 @@ const { program } = require('commander');
 const fs = require('fs');
 const fsAsync = require('fs/promises');
 const http = require('http');
-const { XMLBuilder } = require('fast-xml-parser'); // ← ОНОВЛЕНО
+const { XMLBuilder } = require('fast-xml-parser'); 
 const host = 'localhost';
 const port = 8000;
 
@@ -36,8 +36,8 @@ const requestListener = function (req, res) {
         }
       };
 
-      const builder = new XMLBuilder(); // ← ОНОВЛЕНО
-      const xmlString = builder.build(xmlData); // ← ОНОВЛЕНО
+      const builder = new XMLBuilder(); 
+      const xmlString = builder.build(xmlData); 
 
       res.writeHead(200, { 'Content-Type': 'application/xml' });
       res.end(xmlString);
