@@ -19,6 +19,11 @@ if (!fs.existsSync(options.input)) {
   process.exit(1);
 }
 
+if (!options.host || !options.port || !options.input) {
+  console.error('Missing required parameters');
+  process.exit(1);
+}
+
 const requestListener = function (req, res) {
   fsAsync.readFile(options.input, 'utf-8')
     .then(function (fileContent) {
